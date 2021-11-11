@@ -5,12 +5,27 @@ on:
     branches: [ master ]
     
 jobs:
-  test:
+  super-lint:
+    name: Lint code base
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        
+      - name: run python file
+        run: python main.py
+        
+        
+        
+     
+       
+
+
+
+
         
       
      
