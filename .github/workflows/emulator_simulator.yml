@@ -17,6 +17,9 @@ jobs:
         
       - name: run python file
         run: python main.py
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
         
         
