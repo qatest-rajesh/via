@@ -1,16 +1,17 @@
-  name: VPN Test
+name: CITest
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
     
 jobs:
-  - name: Checkout
-        uses: actions/checkout@v2
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
       - name: Install OpenVPN
         run: |
-          sudo apt update
-          sudo apt install -y openvpn openvpn-systemd-resolved
-      - name: Check VPN IP
-        run: curl https://api.ipify.org
+          sudo apt-get --assume-yes --no-install-recommends install openvpn
+          echo "Testing"
+          curl https://api.ipify.org
+        
+       
