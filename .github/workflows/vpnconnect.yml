@@ -1,0 +1,16 @@
+  name: VPN Test
+
+on:
+  push:
+    branches:
+      - master
+    
+jobs:
+  - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install OpenVPN
+        run: |
+          sudo apt update
+          sudo apt install -y openvpn openvpn-systemd-resolved
+      - name: Check VPN IP
+        run: curl https://api.ipify.org
