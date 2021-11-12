@@ -11,7 +11,13 @@ jobs:
       - name: Install OpenVPN
         run: |
           sudo apt-get --assume-yes --no-install-recommends install openvpn
-          echo "Testing"
-          curl https://api.ipify.org
+          
+      - name: CMD
+        run: echo "Testing"
+        
+      - name: VPN IP
+        run: curl https://api.ipify.org
+          
+          
         
        
